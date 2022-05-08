@@ -1,10 +1,9 @@
-from typing_extensions import Required
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class Starship(models.Model):
-  id_api = models.IntegerField(unique=True, required=True)
+  id_api = models.IntegerField(unique=True, blank=False)
   name = models.CharField(max_length=120, default='')
   model = models.CharField(max_length=120, default='')
   manufacturer = models.CharField(max_length=120, default='')
