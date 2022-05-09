@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 from email.policy import default
 import os
 
-# import dj_database_url
-# from decouple import config
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -86,21 +86,21 @@ WSGI_APPLICATION = 'starwars.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    #  'default': dj_database_url.config(
-    #     default=config('DATABASE_URL')
-    # )
+     'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'starwars',
-        'USER': 'admin',
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'starwars',
+    #     'USER': 'admin',
 
-        'PASSWORD': '1234',
+    #     'PASSWORD': '1234',
 
-        'HOST': 'localhost',
+    #     'HOST': 'localhost',
 
-        'PORT': '5432',
-    }
+    #     'PORT': '5432',
+    # }
 }
 
 
